@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaréViva - Conscientização sobre a Vida Marinha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #004d40;
+        }
+
+        header {
+            background: #00796b;
+            color: white;
+            padding: 1.5em;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+        }
+
+        nav ul li a img {
+            width: 60px;
+            height: 60px;
+            display: block;
+            margin: auto;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-image {
+            background-image: url('https://images.pexels.com/photos/2765872/pexels-photo-2765872.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 1.5em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MaréViva</h1>
+        <nav>
+            <ul>
+                <li><a href="#home"><img src="https://tse1.mm.bing.net/th?id=OIP.fV2-0dMzFDHJsuNUO4ZChQHaFW&w=200&h=144&c=7" alt="Início">Início</a></li>
+                <li><a href="#about"><img src="https://images.pexels.com/photos/302820/pexels-photo-302820.jpeg" alt="Sobre">Sobre</a></li>
+                <li><a href="vida_marinha.html" id="marine-life-link"><img src="https://tse4.mm.bing.net/th?id=OIP.d4Bc2R-LQp9D_-iyJliYlAHaFk&w=200&h=150&c=7" alt="Vida Marinha">Vida Marinha</a></li>
+                <li><a href="#map"><img src="https://images.pexels.com/photos/355288/pexels-photo-355288.jpeg" alt="Mapa">Mapa</a></li>
+                <li><a href="#community"><img src="https://tse1.mm.bing.net/th?id=OIP.gIDFwgW6bf8yZ2qWOdih2gHaE7&w=200&h=133&c=7" alt="Comunidade">Comunidade</a></li>
+                <li><a href="#donate"><img src="https://tse1.mm.bing.net/th?id=OIP.HtPudOVO42v2ISxa2wdjfgHaFY&w=200&h=145&c=7" alt="Doe">Doe</a></li>
+                <li><a href="#contact"><img src="https://tse4.mm.bing.net/th?id=OIP.LjFWKg1GECIveZFph1BzlAHaFk&w=200&h=150&c=7" alt="Contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <div class="bg-image"></div>
+            <h2>Bem-vindo ao MaréViva</h2>
+            <p>Descubra a importância da vida marinha e como protegê-la.</p>
+        </section>
+
+        <section id="about">
+            <h2>Sobre o MaréViva</h2>
+            <p>O MaréViva nasceu do amor pelo oceano e da necessidade urgente de protegê-lo. Tudo começou quando um grupo de amigos, apaixonados pelo mar e preocupados com o aumento da poluição, decidiu agir. Após testemunharem de perto os impactos devastadores do lixo nos recifes e o sofrimento dos animais marinhos, eles perceberam que era hora de mobilizar mais pessoas.</p>
+            <p>Assim, surgiu o MaréViva, um espaço para educar, inspirar e conectar todos aqueles que acreditam que ainda há tempo para salvar os oceanos. Nosso projeto promove ações concretas de conscientização ambiental, incentiva práticas sustentáveis e apoia iniciativas que protegem a vida marinha. Junte-se a nós nesta jornada para manter os mares vivos e saudáveis para as futuras gerações.</p>
+        </section>
+        <section id="donate">
+            <h2>Doe para a Causa</h2>
+            <p>Ajude a proteger os oceanos e a vida marinha apoiando instituições que fazem a diferença.</p>
+            <div id="donation-list"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 MaréViva - Todos os direitos reservados</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("MaréViva - Site carregado com sucesso!");
+            
+            const navLinks = document.querySelectorAll("nav ul li a");
+            
+            navLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const sectionId = this.getAttribute("href").substring(1);
+                    const section = document.getElementById(sectionId);
+                    
+                    if (section) {
+                        window.scrollTo({
+                            top: section.offsetTop - 50,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+<script>
+    document.getElementById("marine-life-link").addEventListener("click", function (event) {
+        event.preventDefault(); // Impede o comportamento padrão do link
+        window.open("vida_marinha.html", "_blank"); // Abre em uma nova aba/janela
+    });
+</script>
+
+<script src="donate.js"></script>
+
+
+</body>
+</html>
+
